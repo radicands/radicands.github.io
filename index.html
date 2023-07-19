@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>???: Project Z</title>
+    <title>RADICANDS: Project Z</title>
     <meta charset="utf-8" />
   </head>
   <body>
-    <p>???: Project Z</p>
+    <p>RADICANDS: Project Z</p>
 
     <!--Add buttons to initiate auth sequence and sign out-->
     <button id="authorize_button" onclick="handleAuthClick()">Authorize</button>
@@ -147,7 +147,7 @@
             (str, row) => `${str}${row[0]}, ${row[1]}, ${row[2]}, ${row[3]}\n`,
             'Name, Email, Age, Civil Status:\n');
 
-        const output2 = range;
+        const output2 = range.toString();
 
         document.getElementById('content').innerText = output2;
       }
