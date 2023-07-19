@@ -147,12 +147,10 @@
             (str, row) => `${str}${row[0]}, ${row[1]}, ${row[2]}, ${row[3]}\n`,
             'Name, Email, Age, Civil Status:\n');
         
-        console.log("range = " + range);
-        console.log("range.values = " + range.values);
+            
+        
 
-        const output2 = range.values();
-
-        document.getElementById('content').innerText = output2;
+        document.getElementById('content').innerText = range.values;
       }
     </script>
     <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
