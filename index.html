@@ -204,7 +204,7 @@
         // Iterate through each row.
         for (let i = 0; i < sheetRowCount; i++)
         {
-          if (rowArray == undefined)
+          if (range.values[i] == undefined)
           {
             console.log("Row[" + i + "]: undefined");
             continue;
