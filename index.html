@@ -213,11 +213,16 @@
           // Iterate through each cell in the rowArray:
           for (let j = 0; j < sheetColCount; j++)
           {
-            console.log("cellData: " + rowArray[j]);
-            
+            const cellData = rowArray[j];
+            console.log("cellData: " + cellData);
+
             // Create HTML Table Cell
             const tableCell = tableRow.insertCell();
-            tableCell.appendChild(document.createTextNode(rowArray[j]));
+            if (typeof cellData == undefined)
+              tableCell.appendChild(document.createTextNode(""));
+            else
+              tableCell.appendChild(document.createTextNode(cellData));
+              
             tableCell.style.border = '1px solid black';
             tableCell.style.textAlign = "center";
           }
