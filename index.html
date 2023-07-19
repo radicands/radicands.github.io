@@ -146,8 +146,10 @@
         // TESTING SHIT!
         const body = document.body;
         const table = document.createElement("table");
-        table.style.width = '100%';
+        table.style.width = '80%';
+        table.style.height = '30%';
         table.style.border = '1px solid black'; 
+        table.style.textAlign = "center";
 
         // Temporary constant of sheet range in number form.
         // TODO: Count the range dynamically.
@@ -173,7 +175,7 @@
             const tableCell = tableRow.insertCell();
             tableCell.appendChild(document.createTextNode(rowArray[j]));
             tableCell.style.border = '1px solid black';
-            //tableCell.style.width = "100%";
+            tableCell.style.textAlign = "center";
 
             result += rowArray[j] + "         ";
           }
@@ -192,4 +194,8 @@
     <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
     <script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
   </body>
+  <footer>
+    <p><b>Developed by <i>reendevelops</i> under RADICANDS - CvSU Cluster of Applied Mathematics Students.</b></p>
+    <p><i>All rights reserved.</i></p>
+  </footer>
 </html>
