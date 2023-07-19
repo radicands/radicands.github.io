@@ -147,8 +147,15 @@
             (str, row) => `${str}${row[0]}, ${row[1]}, ${row[2]}, ${row[3]}\n`,
             'Name, Email, Age, Civil Status:\n');
         
-            
+        const outputArray = range.values.split(',');
+        let result = "";
         
+        for (let i = 0; i < outputArray.length; i++)
+        {
+          result += outputArray[i] + "          ";
+          if (i % 3 == 0)
+            result += "\n";
+        }
 
         document.getElementById('content').innerText = range.values;
       }
