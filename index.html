@@ -146,7 +146,7 @@
         // TESTING SHIT!
         const body = document.body;
         const table = document.createElement("table");
-        table.style.width = '100px';
+        table.style.width = '100%';
         table.style.border = '1px solid black'; 
 
         // Temporary constant of sheet range in number form.
@@ -173,7 +173,7 @@
             const tableCell = tableRow.insertCell();
             tableCell.appendChild(document.createTextNode(rowArray[j]));
             tableCell.style.border = '1px solid black';
-            tableCell.style.width = "100px";
+            //tableCell.style.width = "100%";
 
             result += rowArray[j] + "         ";
           }
