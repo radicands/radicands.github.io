@@ -150,9 +150,11 @@
         console.log("DEBUG: " + typeof range.values);
 
         let test = JSON.stringify(range.values);
-        console.log("test: " + test);
+        console.log("test0: " + test[0]);
+        console.log("test1: " + test[1]);
+        console.log("test2: " + test[2]);
 
-        document.getElementById('content').innerText = range.values;
+        document.getElementById('content').innerText = test;
       }
     </script>
     <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
