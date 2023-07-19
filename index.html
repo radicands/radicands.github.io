@@ -147,6 +147,7 @@
             (str, row) => `${str}${row[0]}, ${row[1]}, ${row[2]}, ${row[3]}\n`,
             'Name, Email, Age, Civil Status:\n');
         
+        console.log("DEBUG: " + typeof range.values);
         let outputArray = (range.values).split(',');
         let result = "";
         
