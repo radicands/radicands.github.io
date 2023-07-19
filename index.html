@@ -148,17 +148,8 @@
             'Name, Email, Age, Civil Status:\n');
         
         console.log("DEBUG: " + typeof range.values);
-        let outputArray = (range.values).split(',');
-        let result = "";
-        
-        for (let i = 0; i < outputArray.length; i++)
-        {
-          result += outputArray[i] + "          ";
-          if (i % 3 == 0)
-            result += "\n";
-        }
 
-        document.getElementById('content').innerText = result;
+        document.getElementById('content').innerText = range.values;
       }
     </script>
     <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
