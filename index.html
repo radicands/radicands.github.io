@@ -196,6 +196,8 @@
         table.style.border = '1px solid black'; 
         table.align = "center";
         table.style.top = "50%";
+
+        console.log("range.values: " + range.values);
         
         // range.value is a list of lists.
         // Each list represents a row.
@@ -206,10 +208,13 @@
           const tableRow = table.insertRow();
 
           const rowArray = range.values[i];
+          console.log("rowArray: " + rowArray);
 
           // Iterate through each cell in the rowArray:
           for (let j = 0; j < sheetColCount; j++)
           {
+            console.log("cellData: " + rowArray[j]);
+            
             // Create HTML Table Cell
             const tableCell = tableRow.insertCell();
             tableCell.appendChild(document.createTextNode(rowArray[j]));
@@ -228,7 +233,7 @@
   </body>
 
   <div class = "footer">
-    <p><b>Developed by <i>reendevelops</i> under RADICANDS - CvSU Cluster of Applied Mathematics Students.</b></p>
+    <p><b>Developed by <i>reendevelops</i> under the Research Committee of RADICANDS - CvSU Cluster of Applied Mathematics Students.</b></p>
     <p><i>All rights reserved.</i></p>
   </div>
 
