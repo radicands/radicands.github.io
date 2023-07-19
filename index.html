@@ -23,19 +23,19 @@
       text-align: center;
     }
 
-    .container 
+    .center-h 
     {
-      border: 1px solid black;
-      height: 75px;
-      width: 150px;
-      display: flex;
+      display: flex; /* or display:grid */
       justify-content: center;
-      align-items: center;
     }
 
-    button 
-    {
-        margin-right: 20px;
+    .center-v {
+      display: flex;
+      align-items: center;
+    }
+    
+    .h-500 {
+      height: 500;
     }
 
   </style>
@@ -46,7 +46,7 @@
     </div>
 
     <!--Add buttons to initiate auth sequence and sign out-->
-    <div class = "container">
+    <div class="h-500 center-v center-h">
       <button id="authorize_button" onclick="handleAuthClick()">Authorize</button>
       <button id="signout_button" onclick="handleSignoutClick()">Sign Out</button>
     </div>
