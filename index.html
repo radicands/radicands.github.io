@@ -204,6 +204,12 @@
         // Iterate through each row.
         for (let i = 0; i < sheetRowCount; i++)
         {
+          if (rowArray == undefined)
+          {
+            console.log("Row[" + i + "]: undefined");
+            continue;
+          }
+
           // Create HTML Table Row
           const tableRow = table.insertRow();
 
