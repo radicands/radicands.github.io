@@ -213,16 +213,18 @@
           // Iterate through each cell in the rowArray:
           for (let j = 0; j < sheetColCount; j++)
           {
+            if (rowArray[j] == undefined) 
+            {
+              console.log("Cell[" + i + ", " + j + "]: undefined");
+              continue;
+            }
+
             const cellData = rowArray[j];
-            console.log("cellData: " + cellData);
+            console.log("Cell[" + i + ", " + j + "]: " + cellData);
 
             // Create HTML Table Cell
             const tableCell = tableRow.insertCell();
-            if (typeof cellData == undefined)
-              tableCell.appendChild(document.createTextNode(""));
-            else
-              tableCell.appendChild(document.createTextNode(cellData));
-
+            tableCell.appendChild(document.createTextNode(cellData));
             tableCell.style.border = '1px solid black';
             tableCell.style.textAlign = "center";
           }
