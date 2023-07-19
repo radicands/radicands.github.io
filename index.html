@@ -146,6 +146,8 @@
         // TESTING SHIT!
         const body = document.body;
         const table = document.createElement("table");
+        table.style.width = '100px';
+        table.style.border = '1px solid black'; 
 
         // Temporary constant of sheet range in number form.
         // TODO: Count the range dynamically.
@@ -169,7 +171,8 @@
           {
             // Create HTML Table Cell
             const tableCell = tableRow.insertCell();
-            tableCell.appendChild(document.createTextNode(`Cell I${i}/J${j}`));
+            tableCell.appendChild(rowArray[j]);
+            tableCell.style.border = '1px solid black';
 
             result += rowArray[j] + "         ";
           }
