@@ -147,11 +147,10 @@
             (str, row) => `${str}${row[0]}, ${row[1]}, ${row[2]}, ${row[3]}\n`,
             'Name, Email, Age, Civil Status:\n');
         
-        console.log("response: " + typeof response);
-        console.log("range: " + typeof range);
-        console.log("output: " + typeof output);
+        console.log("range = " + range);
+        console.log("range.values = " + range.values);
 
-        const output2 = range.toString();
+        const output2 = range.values();
 
         document.getElementById('content').innerText = output2;
       }
