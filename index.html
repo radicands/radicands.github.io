@@ -146,6 +146,10 @@
         const output = range.values.reduce(
             (str, row) => `${str}${row[0]}, ${row[1]}, ${row[2]}, ${row[3]}\n`,
             'Name, Email, Age, Civil Status:\n');
+        
+        console.log("response: " + typeof response);
+        console.log("range: " + typeof range);
+        console.log("output: " + typeof output);
 
         const output2 = range.toString();
 
