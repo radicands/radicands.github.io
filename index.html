@@ -141,13 +141,12 @@
           document.getElementById('content').innerText = 'No values found.';
           return;
         }
-        // TODO: Make the SHEET_RANGE fit all of the sheet.
-        // TODO: Format the output properly.
-        const output = range.values.reduce(
-            (str, row) => `${str}${row[0]}, ${row[1]}, ${row[2]}, ${row[3]}\n`,
-            'Name, Email, Age, Civil Status:\n');
+
         
-        
+        // TESTING SHIT!
+        const body = document.body;
+        const table = document.createElement("table");
+
         // Temporary constant of sheet range in number form.
         // TODO: Count the range dynamically.
         const sheetRowCount = 3;
@@ -159,18 +158,26 @@
         // Iterate through each row.
         for (let i = 0; i < sheetRowCount; i++)
         {
+          // Create HTML Table Row
+          const tableRow = table.insertRow();
+
           const rowArray = range.values[i];
           console.log("rowArray: " + rowArray);
 
-          // Iterate through each column in the rowArray:
+          // Iterate through each cell in the rowArray:
           for (let j = 0; j < sheetColCount; j++)
           {
+            // Create HTML Table Cell
+            const tableCell = tableRow.insertCell();
+            tableCell.appendChild(document.createTextNode(`Cell I${i}/J${j}`));
+
             result += rowArray[j] + "         ";
           }
 
           // New line after each row.
           result += "\n";
         }
+        body.appendChild(table);
 
 
         document.getElementById('content').innerText = result;
