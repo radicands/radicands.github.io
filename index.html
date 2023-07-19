@@ -171,7 +171,7 @@
           {
             // Create HTML Table Cell
             const tableCell = tableRow.insertCell();
-            tableCell.appendChild(rowArray[j]);
+            tableCell.appendChild(document.createTextNode(rowArray[j]));
             tableCell.style.border = '1px solid black';
 
             result += rowArray[j] + "         ";
