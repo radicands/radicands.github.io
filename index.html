@@ -25,15 +25,20 @@
       color: black;
       text-align: center;
     }
-    
-    .vertical-center 
+
+    .container 
     {
-      margin: 0;
-      position: absolute;
-      top: 50%;
-      -ms-transform: translateY(-50%);
-      transform: translateY(-50%);
+    border: 1px solid black;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     }
+
+    button {
+        margin-right: 20px;
+    }
+
   </style>
   
   <body>
@@ -42,7 +47,7 @@
     </div>
 
     <!--Add buttons to initiate auth sequence and sign out-->
-    <div class = "vertical-center">
+    <div class = "container">
       <button id="authorize_button" onclick="handleAuthClick()">Authorize</button>
       <button id="signout_button" onclick="handleSignoutClick()">Sign Out</button>
     </div>
