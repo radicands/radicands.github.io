@@ -147,18 +147,33 @@
             (str, row) => `${str}${row[0]}, ${row[1]}, ${row[2]}, ${row[3]}\n`,
             'Name, Email, Age, Civil Status:\n');
         
-        console.log("DEBUG: " + typeof range.values);
+        
+        // Temporary constant of sheet range in number form.
+        // TODO: Count the range dynamically.
+        const sheetRowCount = 3;
+        const sheetColCount = 4;
+        let result = "";
+        
+        // range.value is a list of lists.
+        // Each list represents a row.
+        // Iterate through each row.
+        for (let i = 0; i < sheetRowCount; i++)
+        {
+          const rowArray = range.values[i].split(',');
+          console.log("rowArray: " + rowArray);
 
-        console.log("range test0: " + range.values[0]);
-        console.log("range test1: " + range.values[1]);
-        console.log("range test2: " + range.values[2]);
+          // Iterate through each column in the rowArray:
+          for (let j = 0; j < sheetColCount; j++)
+          {
+            result += rowArray[j] + "         ";
+          }
 
-        let test = JSON.stringify(range.values);
-        console.log("test0: " + test[0]);
-        console.log("test1: " + test[1]);
-        console.log("test2: " + test[2]);
+          // New line after each row.
+          result += "\n";
+        }
 
-        document.getElementById('content').innerText = test;
+
+        document.getElementById('content').innerText = result;
       }
     </script>
     <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
