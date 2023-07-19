@@ -173,6 +173,7 @@
             const tableCell = tableRow.insertCell();
             tableCell.appendChild(document.createTextNode(rowArray[j]));
             tableCell.style.border = '1px solid black';
+            tableCell.setAttribute('rowSpan', '2');
 
             result += rowArray[j] + "         ";
           }
@@ -183,6 +184,8 @@
         body.appendChild(table);
 
 
+        // TODO: Remove the 'content' entirely since it is replaced with Table.
+        // TODO: However, don't remove it yet until understand what it is.
         //document.getElementById('content').innerText = result;
       }
     </script>
