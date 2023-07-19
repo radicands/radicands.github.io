@@ -6,7 +6,8 @@
   </head>
 
   <style>
-    .header {
+    .header 
+    {
       position: fixed;
       left: 0;
       bottom: 1;
@@ -15,7 +16,8 @@
       text-align: center;
     }
 
-    .footer {
+    .footer 
+    {
       position: fixed;
       left: 0;
       bottom: 0;
@@ -24,9 +26,13 @@
       text-align: center;
     }
     
-    .authorizeButton {
+    .vertical-center 
+    {
+      margin: 0;
+      position: absolute;
       top: 50%;
-      text-align: center;
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
     }
   </style>
   
@@ -36,7 +42,7 @@
     </div>
 
     <!--Add buttons to initiate auth sequence and sign out-->
-    <div class = "authorizeButton">
+    <div class = "vertical-center">
       <button id="authorize_button" onclick="handleAuthClick()">Authorize</button>
       <button id="signout_button" onclick="handleSignoutClick()">Sign Out</button>
     </div>
