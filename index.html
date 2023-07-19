@@ -159,6 +159,7 @@
         // Iterate through each row.
         for (let i = 0; i < sheetRowCount; i++)
         {
+          console.log("range.values[i] typeof: " + typeof range.values[i]);
           const rowArray = range.values[i].split(',');
           console.log("rowArray: " + rowArray);
 
