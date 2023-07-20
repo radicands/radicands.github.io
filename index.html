@@ -209,20 +209,23 @@
         
 
         // #region ANNOUNCEMENT:
+        const paragraph = document.createElement("paragraph")
         for (let i = 0; i < announcementRowCount; i++)
         {
           if (announcementResult.values[i] == undefined)
           {
             console.log("AnnouncementRow[" + i + "]: undefined");
             // Leave an empty space:
-            const empty = document.createElement("empty" + i);
-            empty.textContent = "\n";
+            const empty = document.createTextNode("\n");
+            paragraph.appendChild(empty);
             continue;
           }
 
-          const newAnnouncement = document.createElement("announce" + i);
-          newAnnouncement.textContent = announcementResult[i];
+          const newAnnouncement = document.createElement(announcementResult[i]);
+          paragraph.appendChild(newAnnouncement);
+          console.log("AnnouncementRow[" + i + "]: " + announcementResult[i]);
         }
+        body.appendChild(paragraph);
         // #endregion
 
 
