@@ -8,6 +8,7 @@
   <style>
     .header 
     {
+      font-size: 2em;
       color: black;
       text-align: center;
     }
@@ -29,13 +30,22 @@
       justify-content: center;
     }
 
-    .center-v {
+    .center-v 
+    {
       display: flex;
       align-items: center;
     }
 
-    .h-500 {
+    .h-500 
+    {
       height: 500;
+    }
+
+    .announcement
+    {
+      font-weight: bold;
+      color: black;
+      text-align: center;
     }
 
   </style>
@@ -210,20 +220,19 @@
 
         // #region ANNOUNCEMENT:
         const paragraph = document.createElement("paragraph")
+        paragraph.classList.add("announcement");
         for (let i = 0; i < announcementRowCount; i++)
         {
           if (announcementResult.values[i] == undefined)
           {
             console.log("AnnouncementRow[" + i + "]: undefined");
-            // Leave an empty space:
-            const empty = document.createTextNode("\n");
-            paragraph.appendChild(empty);
+            // TODO: Leave an empty space.
             continue;
           }
 
           const textResult = announcementResult.values[i][0];
 
-          const newAnnouncement = document.createTextNode(textResult);
+          const newAnnouncement = document.createTextNode(textResult + "\n");
           paragraph.appendChild(newAnnouncement);
           console.log("AnnouncementRow[" + i + "]: " + textResult);
         }
@@ -246,37 +255,41 @@
         // range.value is a list of lists.
         // Each list represents a row.
         // Iterate through each row.
-        for (let i = 0; i < trackerRowCount; i++)
+        for (let row = 0; row < trackerRowCount; row++)
         {
-          if (trackerResult.values[i] == undefined)
+          if (trackerResult.values[row] == undefined)
           {
-            console.log("Tracker Row[" + i + "]: undefined");
+            console.log("Tracker Row[" + row + "]: undefined");
             continue;
           }
 
           // Create HTML Table Row
           const tableRow = table.insertRow();
 
-          const rowArray = trackerResult.values[i];
+          const rowArray = trackerResult.values[row];
           console.log("Tracker rowArray: " + rowArray);
 
           // Iterate through each cell in the rowArray:
-          for (let j = 0; j < trackerColCount; j++)
+          for (let cell = 0; cell < trackerColCount; cell++)
           {
-            if (rowArray[j] == undefined) 
+            if (rowArray[cell] == undefined) 
             {
-              console.log("Cell[" + i + ", " + j + "]: undefined");
+              console.log("Cell[" + row + ", " + cell + "]: undefined");
               continue;
             }
 
-            const cellData = rowArray[j];
-            console.log("Cell[" + i + ", " + j + "]: " + cellData);
+            const cellData = rowArray[cell];
+            console.log("Cell[" + row + ", " + cell + "]: " + cellData);
 
             // Create HTML Table Cell
             const tableCell = tableRow.insertCell();
             tableCell.appendChild(document.createTextNode(cellData));
             tableCell.style.border = '1px solid black';
             tableCell.style.textAlign = "center";
+
+            // If in first row, bold the text because it is the header.
+            if (row == 0)
+              tableCell.style.fontWeight = "bold";
           }
         }
         
