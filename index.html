@@ -219,12 +219,13 @@
         const body = document.body;
 
         
-        
+
         // #region ANNOUNCEMENT:
-        const paragraph = document.createElement("p")
-        paragraph.classList.add("announcement");
         for (let row = 0; row < announcementRowCount; row++)
         {
+          const paragraph = document.createElement("p")
+          paragraph.classList.add("announcement");
+
           if (announcementResult.values[row] == undefined)
           {
             // TODO: Leave an empty space.
@@ -234,11 +235,19 @@
 
           const textResult = announcementResult.values[row][0];
 
+          if (textResult == undefined)
+          {
+            // TODO: Leave an empty space.
+            console.log("Announcement Row[" + row + "]: undefined");
+            continue;
+          }
+
           const newAnnouncement = document.createTextNode(textResult + "\n");
           paragraph.appendChild(newAnnouncement);
           console.log("Announcement Row[" + row + "]: " + textResult);
+
+          body.appendChild(paragraph);  
         }
-        body.appendChild(paragraph);  
         // #endregion
 
 
