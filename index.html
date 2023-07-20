@@ -226,6 +226,10 @@
           const paragraph = document.createElement("p")
           paragraph.classList.add("announcement");
 
+          // Add top margin if first paragraph.
+          if (row == 0)
+            paragraph.style.marginTop = "40px";
+
           if (announcementResult.values[row] == undefined)
           {
             // TODO: Leave an empty space.
@@ -260,7 +264,7 @@
         table.style.border = '1px solid black'; 
         table.align = "center";
         table.style.top = "50%";
-        table.style.marginBottom = "1000px";
+        table.style.marginBottom = "200px";
 
         console.log("trackerResult.values: " + trackerResult.values);
         
