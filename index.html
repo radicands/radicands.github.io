@@ -221,9 +221,11 @@
             continue;
           }
 
-          const newAnnouncement = document.createElement(announcementResult[i]);
+          const textResult = announcementResult.values[i][0];
+
+          const newAnnouncement = document.createElement(textResult);
           paragraph.appendChild(newAnnouncement);
-          console.log("AnnouncementRow[" + i + "]: " + announcementResult[i]);
+          console.log("AnnouncementRow[" + i + "]: " + textResult);
         }
         body.appendChild(paragraph);
         // #endregion
