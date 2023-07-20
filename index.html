@@ -223,20 +223,20 @@
         // #region ANNOUNCEMENT:
         const paragraph = document.createElement("p")
         paragraph.classList.add("announcement");
-        for (let i = 0; i < announcementRowCount; i++)
+        for (let row = 0; row < announcementRowCount; row++)
         {
-          if (announcementResult.values[i] == undefined)
+          if (announcementResult.values[row] == undefined)
           {
             // TODO: Leave an empty space.
-            console.log("Announcement Row[" + i + "]: undefined");
+            console.log("Announcement Row[" + row + "]: undefined");
             continue;
           }
 
-          const textResult = announcementResult.values[i][0];
+          const textResult = announcementResult.values[row][0];
 
           const newAnnouncement = document.createTextNode(textResult + "\n");
           paragraph.appendChild(newAnnouncement);
-          console.log("Announcement Row[" + i + "]: " + textResult);
+          console.log("Announcement Row[" + row + "]: " + textResult);
         }
         body.appendChild(paragraph);  
         // #endregion
