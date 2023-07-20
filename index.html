@@ -221,10 +221,11 @@
         
 
         // #region ANNOUNCEMENT:
-        const paragraph = document.createElement("paragraph")
-        paragraph.classList.add("announcement");
         for (let i = 0; i < announcementRowCount; i++)
         {
+          const paragraph = document.createElement("paragraph")
+          paragraph.classList.add("announcement");
+
           if (announcementResult.values[i] == undefined)
           {
             console.log("Announcement Row[" + i + "]: undefined");
@@ -237,8 +238,9 @@
           const newAnnouncement = document.createTextNode(textResult + "\n");
           paragraph.appendChild(newAnnouncement);
           console.log("Announcement Row[" + i + "]: " + textResult);
+          
+          body.appendChild(paragraph);  
         }
-        body.appendChild(paragraph);
         // #endregion
 
 
