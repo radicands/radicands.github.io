@@ -223,7 +223,7 @@
 
           const textResult = announcementResult.values[i][0];
 
-          const newAnnouncement = document.createElement(textResult);
+          const newAnnouncement = document.createTextNode(textResult);
           paragraph.appendChild(newAnnouncement);
           console.log("AnnouncementRow[" + i + "]: " + textResult);
         }
