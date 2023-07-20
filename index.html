@@ -48,6 +48,8 @@
       text-align: center;
     }
 
+    p {text-align: center;}
+
   </style>
   
   <body>
@@ -225,7 +227,7 @@
         {
           if (announcementResult.values[i] == undefined)
           {
-            console.log("AnnouncementRow[" + i + "]: undefined");
+            console.log("Announcement Row[" + i + "]: undefined");
             // TODO: Leave an empty space.
             continue;
           }
@@ -234,7 +236,7 @@
 
           const newAnnouncement = document.createTextNode(textResult + "\n");
           paragraph.appendChild(newAnnouncement);
-          console.log("AnnouncementRow[" + i + "]: " + textResult);
+          console.log("Announcement Row[" + i + "]: " + textResult);
         }
         body.appendChild(paragraph);
         // #endregion
